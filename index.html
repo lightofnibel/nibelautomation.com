@@ -8,40 +8,753 @@
         content="va6sw5a6j9luu2r314odz5o5qrxp17" />
 
   <meta name="description"
-        content="Nibel Automation - Servicios de automatización, integración y soluciones informáticas.">
+        content="Nibel Automation - Automatización de WhatsApp, atención con IA, turnos, seguimiento de clientes e integraciones para negocios.">
 
-  <title>Nibel Automation</title>
+  <title>Nibel Automation | Automatización para negocios</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #121212;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #ececec;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #11b85b, #0a6f3a);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .95rem;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: #10b95f;
+      color: white;
+      box-shadow: 0 10px 30px rgba(16,185,95,.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #0da654;
+    }
+
+    .btn-secondary {
+      border: 1px solid #dfe5e1;
+      background: white;
+    }
+
+    .btn-secondary:hover {
+      background: #f5faf7;
+    }
+
+    .hero {
+      padding: 96px 0 78px;
+      background:
+        radial-gradient(circle at 80% 15%, rgba(16,185,95,.13), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f7fcf9 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #eaf9f0;
+      color: #08773d;
+      border: 1px solid #c8efd8;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: .83rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      line-height: .98;
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    .green {
+      color: #0b9e4f;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #4b4f4d;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background: white;
+      border: 1px solid #e7eee9;
+      box-shadow: 0 24px 60px rgba(0,0,0,.08);
+      border-radius: 28px;
+      padding: 24px;
+    }
+
+    .chat {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bubble {
+      max-width: 84%;
+      padding: 14px 16px;
+      border-radius: 18px;
+      font-size: .98rem;
+    }
+
+    .bubble.left {
+      background: #f1f1f1;
+      align-self: flex-start;
+      border-bottom-left-radius: 5px;
+    }
+
+    .bubble.right {
+      background: #d9fdd3;
+      align-self: flex-end;
+      border-bottom-right-radius: 5px;
+    }
+
+    .automation-line {
+      margin: 20px 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #19ba62, transparent);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .mini-card {
+      background: #f7fbf8;
+      border: 1px solid #e0eee5;
+      border-radius: 16px;
+      padding: 16px;
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 46px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.08rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid #e6ece8;
+      border-radius: 22px;
+      padding: 24px;
+      background: white;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0,0,0,.07);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #eaf9f0;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      color: #656b68;
+      font-size: .96rem;
+    }
+
+    .process {
+      background: #081812;
+      color: white;
+    }
+
+    .process .section-title p {
+      color: #b9c7c0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: #10251b;
+      border: 1px solid #1d3b2b;
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #16b85f;
+      color: white;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #c2cec8;
+      font-size: .96rem;
+    }
+
+    .industries {
+      background: #f7fbf8;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .industry {
+      background: white;
+      border: 1px solid #e2ebe5;
+      border-radius: 20px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .industry strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .industry span {
+      color: #68706c;
+      font-size: .92rem;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      text-align: center;
+      padding: 28px 18px;
+    }
+
+    .benefit .icon {
+      margin: 0 auto 16px;
+    }
+
+    .cta {
+      padding: 80px 0;
+    }
+
+    .cta-box {
+      border-radius: 30px;
+      padding: 54px;
+      background: linear-gradient(135deg, #0d8e48, #12ba60);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .cta-box p {
+      max-width: 700px;
+      margin: 0 auto 26px;
+      color: rgba(255,255,255,.88);
+      font-size: 1.08rem;
+    }
+
+    .cta-box .btn {
+      background: white;
+      color: #08743c;
+    }
+
+    footer {
+      border-top: 1px solid #ececec;
+      padding: 34px 0;
+      color: #707572;
+      font-size: .93rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cards,
+      .steps,
+      .benefits {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links a:not(.btn) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 62px;
+      }
+
+      .hero-grid,
+      .cards,
+      .steps,
+      .benefits,
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .cta-box {
+        padding: 36px 22px;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
   <header>
-    <h1>Nibel Automation</h1>
-    <p>Automatización e integración de procesos para negocios</p>
+    <div class="container">
+      <nav>
+        <a href="#" class="brand">
+          <span class="brand-mark">N</span>
+          Nibel Automation
+        </a>
+
+        <div class="nav-links">
+          <a href="#soluciones">Soluciones</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#sectores">Sectores</a>
+          <a href="#contacto" class="btn btn-primary">Consultar</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>Sobre nosotros</h2>
-      <p>
-        Nibel Automation ofrece servicios de automatización,
-        integración de sistemas y soluciones informáticas.
-      </p>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="eyebrow">Automatización + IA para negocios</span>
+
+          <h1>
+            Automatizá procesos.
+            <span class="green">Ganá tiempo.</span>
+          </h1>
+
+          <p>
+            Convertimos WhatsApp en una herramienta que responde,
+            organiza, registra información y ejecuta tareas automáticamente.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary"
+               href="https://wa.me/5493884882546"
+               target="_blank">
+              Consultar por WhatsApp
+            </a>
+
+            <a class="btn btn-secondary" href="#como-funciona">
+              Ver cómo funciona
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="chat">
+            <div class="bubble left">
+              Hola, quisiera saber qué horarios tienen disponibles esta semana.
+            </div>
+
+            <div class="bubble right">
+              ¡Hola! Claro. Tengo disponibilidad el martes a las 10:00
+              o el jueves a las 17:30. ¿Cuál te sirve mejor?
+            </div>
+
+            <div class="bubble left">
+              El jueves me queda perfecto.
+            </div>
+
+            <div class="bubble right">
+              Listo. Quedó registrado para el jueves a las 17:30.
+              Te enviaremos un recordatorio antes del turno.
+            </div>
+          </div>
+
+          <div class="automation-line"></div>
+
+          <div class="mini-grid">
+            <div class="mini-card">📅 Agenda automáticamente</div>
+            <div class="mini-card">👥 Registra clientes</div>
+            <div class="mini-card">🔔 Envía recordatorios</div>
+            <div class="mini-card">🤖 Responde con IA</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="soluciones">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>No automatizamos mensajes.<br><span class="green">Automatizamos procesos.</span></h2>
+          <p>
+            La conversación es solo el comienzo. La automatización puede
+            ejecutar tareas reales dentro de tu negocio.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="icon">💬</div>
+            <h3>Atención con IA</h3>
+            <p>Respondé consultas frecuentes de forma automática y natural.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📅</div>
+            <h3>Turnos y reservas</h3>
+            <p>Gestioná disponibilidad, confirmaciones y recordatorios.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🎯</div>
+            <h3>Captación de leads</h3>
+            <p>Registrá interesados y organizá oportunidades automáticamente.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🔗</div>
+            <h3>Integraciones</h3>
+            <p>Conectá WhatsApp con planillas, CRM, calendarios y otras herramientas.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="process" id="como-funciona">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>¿Cómo funciona?</h2>
+          <p>
+            La tecnología trabaja en segundo plano para que tu negocio
+            pueda atender, organizar y gestionar procesos automáticamente.
+          </p>
+        </div>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>El cliente escribe</h3>
+            <p>Hace una consulta, pide información o solicita una acción.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>La IA entiende</h3>
+            <p>Interpreta el mensaje y reconoce qué necesita el cliente.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>El sistema actúa</h3>
+            <p>Consulta información, registra datos o ejecuta el proceso necesario.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Todo sigue funcionando</h3>
+            <p>El proceso continúa automáticamente sin depender de tareas repetitivas.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="industries" id="sectores">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Automatizaciones adaptadas a tu actividad</h2>
+          <p>
+            Cada negocio funciona distinto. Diseñamos la solución según
+            tus procesos y necesidades reales.
+          </p>
+        </div>
+
+        <div class="industry-grid">
+
+          <div class="industry">
+            <strong>🐾 Veterinarias</strong>
+            <span>Turnos, consultas y seguimiento.</span>
+          </div>
+
+          <div class="industry">
+            <strong>🩺 Consultorios</strong>
+            <span>Agenda, confirmaciones y recordatorios.</span>
+          </div>
+
+          <div class="industry">
+            <strong>🏠 Inmobiliarias</strong>
+            <span>Consultas, leads y seguimiento comercial.</span>
+          </div>
+
+          <div class="industry">
+            <strong>💼 Profesionales</strong>
+            <span>Agenda, consultas y gestión de clientes.</span>
+          </div>
+
+          <div class="industry">
+            <strong>🛍️ Comercios</strong>
+            <span>Pedidos, productos y atención al cliente.</span>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
     <section>
-      <h2>Información del titular</h2>
-      <p>Titular: Luis Ezequiel Puig</p>
-      <p>Ubicación: San Salvador de Jujuy, Jujuy, Argentina</p>
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Más tiempo para lo importante</h2>
+          <p>
+            Automatizar tareas repetitivas permite dedicar más tiempo
+            a atender mejor, vender y hacer crecer el negocio.
+          </p>
+        </div>
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <div class="icon">⏱️</div>
+            <h3>Ahorrá tiempo</h3>
+            <p>Reducí tareas manuales y repetitivas.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="icon">🌙</div>
+            <h3>Atención continua</h3>
+            <p>Respondé consultas incluso fuera del horario comercial.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="icon">📈</div>
+            <h3>No pierdas oportunidades</h3>
+            <p>Registrá y seguí cada consulta automáticamente.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="icon">⚙️</div>
+            <h3>Procesos organizados</h3>
+            <p>Centralizá información y automatizá acciones.</p>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
-    <section>
-      <h2>Contacto</h2>
-      <p>Email: contacto@nibelautomation.com</p>
+    <section class="cta" id="contacto">
+      <div class="container">
+
+        <div class="cta-box">
+          <h2>¿Qué proceso de tu negocio te gustaría dejar de hacer manualmente?</h2>
+
+          <p>
+            Contame cómo trabajás actualmente y vemos juntos qué partes
+            se pueden automatizar.
+          </p>
+
+          <a class="btn"
+             href="https://wa.me/5493884882546"
+             target="_blank">
+            Hablar por WhatsApp
+          </a>
+        </div>
+
+      </div>
     </section>
+
   </main>
 
   <footer>
-    <p>Nibel Automation - Luis Ezequiel Puig</p>
+    <div class="container footer-grid">
+      <div>
+        <strong>Nibel Automation</strong><br>
+        Automatización real para negocios reales.
+      </div>
+
+      <div>
+        Luis Ezequiel Puig · San Salvador de Jujuy, Argentina
+      </div>
+
+      <div>
+        contacto@nibelautomation.com
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
